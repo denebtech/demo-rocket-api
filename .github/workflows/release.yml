@@ -4,9 +4,6 @@ on:
   push:
     tags:
       - '*'
-    branches:
-      - main
-  workflow_dispatch:
   
 env:
   REGISTRY: crpi-yf7xaqz5b2u9gd29.us-east-1.personal.cr.aliyuncs.com
@@ -14,7 +11,6 @@ env:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && startsWith(github.ref, 'refs/tags/')
     
     steps:
       - name: Checkout code
