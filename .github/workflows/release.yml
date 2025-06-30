@@ -7,6 +7,7 @@ on:
   
 env:
   REGISTRY: crpi-yf7xaqz5b2u9gd29.us-east-1.personal.cr.aliyuncs.com
+  ACR_NAMESPACE: denebtech_public_c645d3q2
 
 jobs:
   build-and-push:
@@ -30,7 +31,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/demo-rocket-api
+          images: ${{ env.REGISTRY }}/{{ env.ACR_NAMESPACE }}/demo-rocket-api
           tags: |
             type=ref,event=tag
             type=sha
