@@ -31,7 +31,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/{{ env.ACR_NAMESPACE }}/demo-rocket-api
+          images: ${{ env.REGISTRY }}/${{ env.ACR_NAMESPACE }}/demo-rocket-api
           tags: |
             type=ref,event=tag
             type=sha
